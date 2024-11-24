@@ -1,0 +1,56 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.heading {
+  @include gridDefault;
+
+  padding-top: vw(20);
+  position: relative;
+  width: 100%;
+  grid-column: span 12;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $black;
+    height: 1px;
+  }
+
+  &.--shrunk-text {
+    p:nth-child(3) {
+      grid-column: 4 / span 5;
+    }
+  }
+
+  h2 {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+
+    svg {
+      margin-right: vw(36);
+      width: vw(15);
+      height: vw(16);
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+
+  *:not(h2) {
+    grid-column: 4 / span 9;
+  }
+
+  p:nth-child(3) {
+    margin-top: vw(64);
+  }
+
+  a {
+    margin-top: vw(40);
+  }
+}

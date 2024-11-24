@@ -1,0 +1,44 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.link-arrow {
+  display: flex;
+  color: $orange;
+  gap: vw(8);
+  position: relative;
+  width: fit-content;
+  padding-bottom: vw(7);
+
+  svg {
+    width: vw(13);
+    height: vw(10);
+    transition: 0.3s ease-in;
+  }
+
+  span {
+    position: relative;
+    font-size: vw(14);
+    font-weight: 500;
+    height: vw(10);
+    line-height: 1;
+    line-height: vw(10);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - vw(23));
+    height: 1px;
+    background-color: $orange;
+    transition: 0.3s ease-in;
+  }
+
+  &:hover {
+    &::after {
+      bottom: vw(-2);
+      opacity: 0;
+    }
+  }
+}

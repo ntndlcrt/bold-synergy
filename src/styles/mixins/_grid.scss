@@ -1,0 +1,57 @@
+@use './vw' as *;
+@use './responsive' as *;
+
+// Helper function to process single or double values
+@function process-grid-values($value) {
+  @if type-of($value) == 'list' and length($value) == 2 {
+    @return $value;
+  } @else {
+    @return ($value, $value);
+  }
+}
+
+@mixin grid($columns, $gap, $no-padding: null) {
+  // Process columns and gap values
+  $columns-values: process-grid-values($columns);
+  $gap-values: process-grid-values($gap);
+
+  $columns-mobile: nth($columns-values, 1);
+  $columns-desktop: nth($columns-values, 2);
+
+  $gap-mobile: nth($gap-values, 1);
+  $gap-desktop: nth($gap-values, 2);
+
+  gap: $gap-mobile;
+
+  @include desktop {
+    gap: $gap-desktop;
+  }
+
+  @if $no-padding != none {
+    padding-left: $gap-mobile;
+    padding-right: $gap-mobile;
+
+    @include desktop {
+      padding-left: $gap-desktop;
+      padding-right: $gap-desktop;
+    }
+  }
+
+  // Apply grid styles
+  display: grid;
+  grid-template-columns: repeat($columns-mobile, 1fr);
+
+  // Conditionally apply media query if desktop columns differ from mobile columns
+  @if $columns-desktop != $columns-mobile {
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat($columns-desktop, 1fr);
+    }
+  }
+}
+
+@mixin gridDefault {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: vw(20);
+  row-gap: 0;
+}

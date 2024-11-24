@@ -1,0 +1,79 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.media {
+  position: relative;
+  overflow: hidden;
+
+  &Inner {
+    position: relative;
+
+    img,
+    video {
+      @include img;
+
+      display: block;
+    }
+  }
+
+  &.--contain {
+    .mediaInner {
+      img,
+      video {
+        @include imgContain;
+      }
+    }
+  }
+
+  &.--parallax {
+    .mediaInner {
+      position: absolute;
+    }
+  }
+
+  &.--parallax.--vertical {
+    .mediaInner {
+      width: 100%;
+      height: 120%;
+      left: 0;
+    }
+  }
+
+  &.--parallax.--vertical.--to-bottom {
+    .mediaInner {
+      bottom: 0;
+    }
+  }
+
+  &.--parallax.--vertical.--to-top {
+    .mediaInner {
+      top: 0;
+    }
+  }
+
+  &.--parallax.--horizontal {
+    .mediaInner {
+      width: 120%;
+      height: 100%;
+      top: 0;
+    }
+  }
+
+  &.--parallax.--horizontal.--to-right {
+    .mediaInner {
+      right: 0;
+    }
+  }
+
+  &.--parallax.--horizontal.--to-left {
+    .mediaInner {
+      left: 0;
+    }
+  }
+
+  &:not(.--parallax) {
+    .mediaInner {
+      @include absoluteFull;
+    }
+  }
+}

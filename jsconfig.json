@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@mixins": ["./src/styles/mixins/"],
+      "@config": ["./src/styles/config/"]
+    }
+  }
+}
