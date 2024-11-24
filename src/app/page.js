@@ -1,5 +1,6 @@
 import HeroSlider from '@/blocks/HeroSlider'
 import Consulting from '@/blocks/Consulting'
+import GridIndustries from '@/blocks/GridIndustries'
 
 export default function Home() {
   return (
@@ -78,6 +79,60 @@ export default function Home() {
           {
             icon: '/svg/consulting-4.svg',
             title: 'We have a Regulatory Expertise',
+          },
+        ]}
+      />
+      <GridIndustries
+        uptitle="Our industries"
+        text="Whether you are seeking to expand your business, improve operational efficiency, or navigate a new market, Synergy Consulting is your trusted partner. With a history of successful engagements, Synergy Consulting has a reputation for delivering results. We have helped numerous Saudi firms optimize their operations, enhance their market position, and achieve their growth aspirations. Let us leverage our expertise to help you unlock the full potential."
+        items={[
+          {
+            title: 'Agribusiness',
+            text: 'Office ipsum you must be muted. Ditching beforehand growth eager book. Incentivize die sky alarming asserts seat diligence hiring. Stand needle algorithm.',
+            link: {
+              href: '#',
+              title: 'Learn more',
+            },
+          },
+          {
+            title: 'Communications, Media & Technology',
+            text: 'Office ipsum you must be muted. Ditching beforehand growth eager book. Incentivize die sky alarming asserts seat diligence hiring. Stand needle algorithm.',
+            link: {
+              href: '#',
+              title: 'Learn more',
+            },
+          },
+          {
+            title: 'Consumer Products, Retail & E-Commerce',
+            text: 'Office ipsum you must be muted. Ditching beforehand growth eager book. Incentivize die sky alarming asserts seat diligence hiring. Stand needle algorithm.',
+            link: {
+              href: '#',
+              title: 'Learn more',
+            },
+          },
+          {
+            title: 'Education',
+            text: 'Office ipsum you must be muted. Ditching beforehand growth eager book. Incentivize die sky alarming asserts seat diligence hiring. Stand needle algorithm.',
+            link: {
+              href: '#',
+              title: 'Learn more',
+            },
+          },
+          {
+            title: 'Healthcare',
+            text: 'Office ipsum you must be muted. Ditching beforehand growth eager book. Incentivize die sky alarming asserts seat diligence hiring. Stand needle algorithm.',
+            link: {
+              href: '#',
+              title: 'Learn more',
+            },
+          },
+          {
+            title: 'Travel & Tourism',
+            text: 'Office ipsum you must be muted. Ditching beforehand growth eager book. Incentivize die sky alarming asserts seat diligence hiring. Stand needle algorithm.',
+            link: {
+              href: '#',
+              title: 'Learn more',
+            },
           },
         ]}
       />

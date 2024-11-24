@@ -1,22 +1,13 @@
 import localFont from 'next/font/local'
 
-// const englisch = localFont({
-//   name: 'Englisch',
-//   variable: '--font-englisch',
-//   src: [
-//     {
-//       path: '../../public/fonts/englisch/Englisch-Regular.otf',
-//       weight: '400',
-//     },
-//     {
-//       path: '../../public/fonts/englisch/Englisch-RegularItalic.otf',
-//       weight: '400',
-//       style: 'italic',
-//     },
-//   ],
-//   subsets: ['latin'],
-// })
+export const generalSans = localFont({
+  src: '../../public/fonts/GeneralSans-Variable.woff2',
+  variable: '--font-general-sans',
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
+})
 
-// const fonts = `${helveticaArabic.variable} ${englisch.variable}`
-const fonts = ''
+const fonts = `${generalSans.variable}`
 export default fonts

@@ -1,0 +1,49 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.gridIndustries {
+  row-gap: vw(64);
+  padding-top: vw(50);
+  padding-bottom: vw(50);
+
+  ul {
+    grid-column: 4 / span 9;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: vw(142);
+    row-gap: vw(38);
+
+    li {
+      display: flex;
+      flex-direction: column;
+      padding-top: vw(40);
+      border-top: 4px solid $orange;
+      cursor: pointer;
+      height: 100%;
+
+      &:hover {
+        h3 {
+          color: $orange;
+        }
+      }
+
+      h3 {
+        margin-bottom: vw(60);
+        font-size: vw(20);
+        line-height: 1.1;
+        font-weight: 500;
+        transition: 0.3s ease-in;
+      }
+
+      p {
+        font-size: vw(16);
+        line-height: 1.4;
+        margin-bottom: vw(42);
+      }
+
+      a {
+        margin-top: auto;
+      }
+    }
+  }
+}
