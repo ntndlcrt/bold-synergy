@@ -12,8 +12,8 @@ export default function SVG({ name }) {
           <path
             d="M0 5H10.0002M7.00024 9L11.0002 5L7.00024 1"
             stroke="#FF5826"
-            stroke-width="1.5"
-            stroke-linecap="square"
+            strokeWidth="1.5"
+            strokeLinecap="square"
           />
         </svg>
       )

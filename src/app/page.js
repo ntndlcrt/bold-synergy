@@ -1,8 +1,58 @@
+import HeroSlider from '@/blocks/HeroSlider'
 import Consulting from '@/blocks/Consulting'
 
 export default function Home() {
   return (
     <>
+      <HeroSlider
+        items={[
+          {
+            title: 'Synergy Consulting',
+            text: 'Made in Saudi<br/>solutions for global<br/>excellence',
+            link: {
+              href: '/about-us/',
+              title: 'Learn more about us',
+            },
+            src: '/images/slider-home/1.png',
+          },
+          {
+            title: 'Business Strategy & Transformation',
+            text: 'Future-proof your business and chart your transformation journey with us',
+            link: {
+              href: '/about-us/',
+              title: 'Learn more about us',
+            },
+            src: '/images/slider-home/2.png',
+          },
+          {
+            title: 'Consumer Product, Retail & e-commerce',
+            text: 'In the age of disruption, navigate the complexities of modern commerce with confidence ',
+            link: {
+              href: '/about-us/',
+              title: 'Learn more about us',
+            },
+            src: '/images/slider-home/3.png',
+          },
+          {
+            title: 'Growth, Sales & Marketing',
+            text: 'Beyond the funnel, build a modern approach to Sales & Marketing',
+            link: {
+              href: '/about-us/',
+              title: 'Learn more about us',
+            },
+            src: '/images/slider-home/4.png',
+          },
+          {
+            title: 'Communications, Media & Technology',
+            text: 'Beyond the buzz, strategic insights for a connected world',
+            link: {
+              href: '/about-us/',
+              title: 'Learn more about us',
+            },
+            src: '/images/slider-home/5.png',
+          },
+        ]}
+      />
       <Consulting
         uptitle="Who we are"
         title="At <strong>Synergy Consulting</strong>, we are more than just consultants; we are your strategic partners in navigating the dynamic business landscape of Saudi Arabia."

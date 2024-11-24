@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { useGSAP } from '@gsap/react'
 import React, { useRef, useState, useEffect } from 'react'
+import parse from 'html-react-parser'
 
 export default function TextLines({
   children,
@@ -67,7 +68,7 @@ export default function TextLines({
 
   return React.createElement(
     tag,
-    { ref: refText, className: `${classes} text-lines` },
-    children
+    { ref: refText, className: `${classes ? classes : ''} text-lines` },
+    parse(children)
   )
 }
