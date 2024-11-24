@@ -5,7 +5,7 @@ import fonts from '@/libs/fonts'
 import '@/styles/app.scss'
 
 export const metadata = {
-  title: 'Bold Starter',
+  title: 'Synergy',
   description: 'Insert the title here',
 }
 

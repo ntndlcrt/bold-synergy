@@ -59,4 +59,22 @@
       background-color: $cream;
     }
   }
+
+  &.--white {
+    color: $white;
+
+    svg * {
+      &[fill] {
+        fill: $white;
+      }
+
+      &[stroke] {
+        stroke: $white;
+      }
+    }
+
+    &::after {
+      background-color: $white;
+    }
+  }
 }
