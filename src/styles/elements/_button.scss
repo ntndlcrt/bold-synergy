@@ -1,0 +1,30 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.button {
+  width: fit-content;
+  cursor: pointer;
+  padding: vw(20) vw(30);
+  border: 1.5px solid $cream;
+  color: $cream;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+
+  &,
+  * {
+    transition: 0.3s ease-out;
+  }
+
+  span {
+    font-size: vw(15);
+    height: vw(12);
+    line-height: vw(12);
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: $cream;
+    color: $orange;
+  }
+}

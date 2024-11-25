@@ -1,0 +1,190 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.footer {
+  background: $black;
+
+  .inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  & > svg {
+    width: vw(1298);
+    height: vw(1343);
+    position: absolute;
+    z-index: 1;
+    bottom: vw(-312);
+    right: vw(-200);
+    opacity: 0.15;
+  }
+
+  .content {
+    padding: vw(40) vw(40) vw(340) vw(40);
+    display: flex;
+    flex-direction: column;
+    gap: vw(36);
+
+    * {
+      font-size: vw(56);
+      line-height: 1;
+    }
+
+    p {
+      width: vw(910);
+      color: $cream;
+    }
+
+    button {
+      color: $orange;
+      padding-bottom: vw(12);
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 4px;
+        background-color: $orange;
+      }
+
+      &:hover {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .frames {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+
+    .frame {
+      flex: 1;
+      padding: vw(24) vw(40) vw(48);
+      display: flex;
+      flex-direction: column;
+      gap: vw(112);
+      background: $orange;
+      color: $cream;
+
+      p {
+        font-size: vw(64);
+        line-height: 1.1;
+      }
+
+      a {
+        margin-top: auto;
+      }
+
+      &:last-of-type {
+        background: $orange-dark;
+      }
+    }
+  }
+
+  .bottom {
+    padding: vw(50) vw(40);
+    color: $cream;
+    display: flex;
+    width: 100%;
+
+    & > svg {
+      width: vw(152);
+      height: vw(55);
+      margin-right: vw(170);
+    }
+
+    & > *:not(svg) {
+      margin-top: vw(16);
+    }
+
+    & > span {
+      font-size: vw(14);
+      font-weight: 500;
+      margin-right: vw(46);
+    }
+
+    & > ul {
+      flex-direction: row;
+      align-items: center;
+      gap: vw(46);
+      margin-right: vw(260);
+      height: fit-content;
+
+      li {
+        height: fit-content;
+      }
+
+      a {
+        font-size: vw(14);
+        font-weight: 500;
+        height: fit-content;
+        display: block;
+
+        &,
+        svg * {
+          transition: 0.3s ease-in;
+        }
+
+        &:hover {
+          color: $orange;
+
+          svg * {
+            &[fill] {
+              fill: $orange;
+            }
+
+            &[stroke] {
+              stroke: $orange;
+            }
+          }
+        }
+      }
+    }
+
+    .group {
+      display: flex;
+      gap: vw(24);
+      margin-left: auto;
+      height: fit-content;
+      align-items: center;
+
+      * {
+        height: fit-content;
+        display: block;
+      }
+
+      span {
+        font-size: vw(12);
+      }
+
+      a {
+        svg {
+          width: vw(93);
+          height: vw(12);
+
+          path {
+            transition: 0.3s ease-in;
+          }
+        }
+
+        &:hover {
+          svg path {
+            &[fill] {
+              fill: $orange;
+            }
+
+            &[stroke] {
+              stroke: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
