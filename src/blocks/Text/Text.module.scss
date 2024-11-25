@@ -1,0 +1,20 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.text {
+  padding-top: vw(50);
+  padding-bottom: vw(228);
+
+  & > div {
+    grid-column: span 12;
+    padding-top: 0;
+
+    &::before {
+      display: none;
+    }
+
+    :global(.intro) {
+      grid-column: 4 / span 8;
+    }
+  }
+}
