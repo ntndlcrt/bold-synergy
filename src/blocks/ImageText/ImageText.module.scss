@@ -1,0 +1,44 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.imageText {
+  display: flex;
+  padding-left: vw(80);
+  position: relative;
+
+  p {
+    padding: vw(400) 0 vw(64);
+    position: relative;
+    z-index: 2;
+    width: vw(920);
+    font-size: vw(30);
+    line-height: 1.2;
+
+    strong {
+      font-weight: 600;
+    }
+
+    &,
+    strong {
+      color: $cream;
+    }
+  }
+
+  :global(.media) {
+    position: absolute;
+    inset: 0 vw(40);
+    z-index: 1;
+
+    &::before {
+      @include absoluteFull;
+
+      content: '';
+      z-index: 2;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+    }
+  }
+}
