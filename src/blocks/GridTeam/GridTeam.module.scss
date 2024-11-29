@@ -6,10 +6,6 @@
   padding-bottom: vw(100);
   row-gap: vw(100);
 
-  & > div {
-    grid-column: span 12;
-  }
-
   ul {
     grid-column: 4 / span 9;
     display: grid;

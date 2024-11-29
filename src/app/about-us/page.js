@@ -1,5 +1,6 @@
 import Hero from '@/blocks/Hero'
 import Text from '@/blocks/Text'
+import List from '@/blocks/List'
 import ImageText from '@/blocks/ImageText'
 import GridTeam from '@/blocks/GridTeam'
 
@@ -12,6 +13,32 @@ export default function About() {
         src="/images/hero-about.png"
       />
       <Text title="At <strong>Synergy Consulting</strong>, we are more than just consultants; we are your strategic partners in navigating the dynamic business landscape of Saudi Arabia. With a deep-rooted understanding of the Kingdom's unique market dynamics, regulatory environment, and cultural nuances, we empower Saudi firms to achieve sustainable growth and success." />
+      <List
+        uptitle="Our approach"
+        title="At Synergy Consulting, we believe that the <strong>most effective solutions</strong> emerge from a harmonious blend of <strong>human insight and technological innovation</strong>. Our approach is rooted in five key principles:"
+        items={[
+          {
+            title: 'Human-Centric Problem Solving',
+            text: 'We prioritize understanding the unique challenges faced by our clients. By leveraging empathy and experience, we engage deeply with stakeholders to uncover their needs and aspirations.',
+          },
+          {
+            title: 'Collaborative Innovation',
+            text: 'Our diverse team of experts collaborates closely with clients to co-create solutions that are not only effective but also sustainable. We harness the collective intelligence of our team and the insights of our clients to drive meaningful change.',
+          },
+          {
+            title: 'Technology-Driven Efficiency',
+            text: 'We integrate cutting-edge technologies that enhance operational efficiency and improve decision-making. By embracing innovation, we empower our clients to navigate complexities and seize new opportunities.',
+          },
+          {
+            title: 'Agile Adaptability',
+            text: "In a rapidly evolving landscape, we remain agile and responsive. Our iterative approach allows us to pivot as necessary, ensuring that our solutions are always aligned with our clients' goals and the shifting market dynamics.",
+          },
+          {
+            title: 'Quantifiable Results',
+            text: "We believe in delivering actionable solutions rather than impractical advice. Our commitment to hands-on engagement means we go on the ground, getting our hands dirty to ensure that strategies are effectively implemented and truly resonate with the realities of our clients' operations.",
+          },
+        ]}
+      />
       <ImageText
         text="Our team of <strong>seasoned professionals</strong> boasts a proven track record of delivering tailored solutions that address the specific challenges and opportunities faced by Saudi businesses. We combine our in-depth industry expertise with a client-centric approach to forge lasting partnerships that drive tangible results."
         src="/images/image-text.png"

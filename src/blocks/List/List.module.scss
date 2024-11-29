@@ -1,0 +1,43 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.list {
+  padding-top: vw(50);
+  padding-bottom: vw(50);
+  grid-template-columns: 1fr;
+  row-gap: vw(100);
+
+  & > * {
+    grid-column: span 1;
+  }
+
+  & > div {
+    :global(.intro) {
+      grid-column: 4 / span 8;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: vw(42);
+
+    li {
+      display: flex;
+      flex-direction: column;
+      padding-top: vw(40);
+      border-top: 5px solid $orange;
+
+      h3 {
+        margin-bottom: vw(24);
+        font-size: vw(18);
+        font-weight: 600;
+      }
+
+      p {
+        font-size: vw(16);
+        line-height: 1.4;
+      }
+    }
+  }
+}
