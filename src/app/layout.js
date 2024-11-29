@@ -2,6 +2,7 @@ import GSAP from '@/libs/gsap'
 import CursorProvider from '@/libs/cursor'
 import fonts from '@/libs/fonts'
 
+import PopupTeam from '@/components/PopupTeam'
 import Footer from '@/components/Footer'
 
 import '@/styles/app.scss'
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
             />
           </CursorProvider>
         </GSAP>
+        <PopupTeam />
       </body>
     </html>
   )

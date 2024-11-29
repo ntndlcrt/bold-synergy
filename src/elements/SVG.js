@@ -1,5 +1,23 @@
 export default function SVG({ name }) {
   switch (name) {
+    case 'cross':
+      return (
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 2L2 14M2 2L14 14"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="square"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )
     case 'instagram':
       return (
         <svg

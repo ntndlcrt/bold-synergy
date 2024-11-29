@@ -1,0 +1,61 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.gridTeam {
+  padding-top: vw(80);
+  padding-bottom: vw(100);
+  row-gap: vw(100);
+
+  & > div {
+    grid-column: span 12;
+  }
+
+  ul {
+    grid-column: 4 / span 9;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: vw(20);
+
+    li {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      background: $white;
+      min-height: vw(502);
+
+      :global(.media) {
+        width: 100%;
+        height: vw(260);
+      }
+
+      &:not(:has(:global(.media))) {
+        padding-top: vw(260);
+      }
+
+      .content {
+        padding: vw(38);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          font-size: vw(35);
+          line-height: 1.1;
+          font-weight: 500;
+          margin-bottom: vw(20);
+        }
+
+        & > span {
+          font-size: vw(20);
+          line-height: 1.1;
+          display: block;
+          margin-bottom: vw(64);
+        }
+
+        :global(.link-arrow) {
+          margin-top: auto;
+        }
+      }
+    }
+  }
+}

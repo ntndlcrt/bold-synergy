@@ -77,4 +77,22 @@
       background-color: $white;
     }
   }
+
+  &.--black {
+    color: $black;
+
+    svg * {
+      &[fill] {
+        fill: $black;
+      }
+
+      &[stroke] {
+        stroke: $black;
+      }
+    }
+
+    &::after {
+      background-color: $black;
+    }
+  }
 }
