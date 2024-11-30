@@ -1,9 +1,16 @@
+import HeroService from '@/blocks/HeroService'
 import ContentPage from '@/blocks/ContentPage'
 import ImageTextFullscreen from '@/blocks/ImageTextFullscreen'
 
 export default function Industry() {
   return (
     <>
+      <HeroService
+        uptitle="Consulting services"
+        title="People & Organizational Performance"
+        text="Unlock peak performance and empower your people for organizational success"
+        src="/images/hero-service.jpeg"
+      />
       <ContentPage
         blocks={[
           {
