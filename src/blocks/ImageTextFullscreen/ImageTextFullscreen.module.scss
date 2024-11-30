@@ -1,0 +1,60 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.imageTextFullscreen {
+  height: vw(1100);
+  padding: 0;
+  display: flex;
+  position: relative;
+  margin-top: vw(200);
+
+  :global(.media) {
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: vw(1130);
+    background: $orange;
+    padding: vw(90);
+    display: flex;
+    flex-direction: column;
+    gap: vw(40);
+    z-index: 2;
+
+    & > svg {
+      width: vw(31);
+      height: vw(32);
+
+      *[fill] {
+        fill: $cream;
+      }
+
+      *[stroke] {
+        stroke: $cream;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: vw(32);
+      font-weight: 300;
+      line-height: 1.4;
+    }
+  }
+}
