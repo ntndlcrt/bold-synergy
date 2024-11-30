@@ -43,6 +43,17 @@ ul {
   }
 }
 
+.statement {
+  font-size: vw(26);
+  font-weight: 500;
+  line-height: 1.3;
+
+  strong {
+    font-weight: 600;
+    color: $orange;
+  }
+}
+
 .uptitle {
   font-size: vw(26);
   line-height: 1.6;

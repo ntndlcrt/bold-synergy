@@ -1,0 +1,51 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.pageText {
+  border-top: 1px solid $black;
+
+  &,
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: vw(50);
+  }
+
+  h2 {
+    padding-top: vw(12);
+    padding-bottom: vw(8);
+    display: flex;
+    align-items: center;
+    height: fit-content;
+
+    svg {
+      margin-right: vw(20);
+      width: vw(15);
+      height: vw(16);
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+
+  .content {
+    p {
+      font-size: vw(18);
+      line-height: 1.5;
+
+      a {
+        color: $orange;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

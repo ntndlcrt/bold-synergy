@@ -1,0 +1,89 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.pageHelp {
+  border-top: 1px solid $black;
+
+  &,
+  & > .content {
+    display: flex;
+    flex-direction: column;
+    gap: vw(40);
+  }
+
+  h2 {
+    padding-top: vw(12);
+    padding-bottom: vw(8);
+    display: flex;
+    align-items: center;
+    height: fit-content;
+
+    svg {
+      margin-right: vw(20);
+      width: vw(15);
+      height: vw(16);
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+
+  & > .content {
+    :global(.statement) {
+      padding-right: vw(140);
+    }
+
+    & > p:not(:global(.statement)) {
+      padding-right: vw(292);
+    }
+
+    img {
+      max-width: vw(953);
+    }
+  }
+
+  & > ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: vw(20);
+
+    li {
+      width: vw(302);
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+
+      :global(.media) {
+        height: vw(160);
+      }
+
+      & > .content {
+        flex: 1;
+        padding: vw(24);
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          margin-bottom: vw(20);
+          font-size: vw(22);
+          line-height: 1.12;
+        }
+
+        p {
+          margin-top: auto;
+          opacity: 0.5;
+          font-size: vw(12);
+          line-height: 1.4;
+          margin-bottom: vw(40);
+        }
+
+        a {
+          font-size: vw(14);
+        }
+      }
+    }
+  }
+}

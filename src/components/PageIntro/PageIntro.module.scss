@@ -1,0 +1,23 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.pageIntro {
+  display: flex;
+  flex-direction: column;
+  gap: vw(50);
+
+  &.--big-gap {
+    :global(.intro) {
+      margin-bottom: vw(50);
+    }
+  }
+
+  p:not(:global(.intro)):not(:global(.statement)) {
+    font-size: vw(18);
+    line-height: 1.5;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

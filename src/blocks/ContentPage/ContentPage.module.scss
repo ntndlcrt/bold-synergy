@@ -1,0 +1,49 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.contentPage {
+  padding-top: vw(80);
+  padding-bottom: vw(120);
+  row-gap: vw(100);
+
+  & > div:not(aside) {
+    grid-column: 5 / span 8;
+  }
+
+  aside {
+    grid-column: span 3;
+    height: fit-content;
+
+    ul {
+      li {
+        border-left: 4px solid #d2d2c1;
+
+        &,
+        a {
+          transition: 0.3s ease-out;
+        }
+
+        a {
+          padding: vw(30) vw(10) vw(10) vw(10);
+          color: $black;
+          opacity: 0.5;
+          font-size: vw(23);
+          height: vw(30);
+          font-weight: 500;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        &.--active {
+          border-color: $orange;
+
+          a {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

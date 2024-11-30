@@ -13,4 +13,8 @@ export const useStore = create((set) => ({
   setPopupTeamOpen: (val) => set({ popupTeamOpen: val }),
   popupTeamData: null,
   setPopupTeamData: (obj) => set({ popupTeamData: obj }),
+  popupHelpOpen: false,
+  setPopupHelpOpen: (val) => set({ popupHelpOpen: val }),
+  popupHelpData: null,
+  setPopupHelpData: (obj) => set({ popupHelpData: obj }),
 }))
