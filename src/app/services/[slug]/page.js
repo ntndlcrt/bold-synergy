@@ -1,4 +1,5 @@
 import HeroService from '@/blocks/HeroService'
+import Breadcrumb from '@/components/Breadcrumb'
 import ContentPage from '@/blocks/ContentPage'
 import ImageTextFullscreen from '@/blocks/ImageTextFullscreen'
 
@@ -10,6 +11,41 @@ export default function Industry() {
         title="People & Organizational Performance"
         text="Unlock peak performance and empower your people for organizational success"
         src="/images/hero-service.jpeg"
+      />
+      <Breadcrumb
+        title="Consulting services"
+        pageTitle="Business Strategy & Transformation"
+        isBlack
+        links={[
+          {
+            title: 'Business Strategy & Transformation',
+            href: '/services/business-strategy-and-transformation',
+          },
+          {
+            title: 'Corporate Finance',
+            href: '/services/corporate-finance',
+          },
+          {
+            title: 'Digital Transformation',
+            href: '/services/digital-transformation',
+          },
+          {
+            title: 'Growth, Marketing & Sales',
+            href: '/services/growth-marketing-and-sales',
+          },
+          {
+            title: 'Mergers and acquisitions',
+            href: '/services/mergers-and-acquisitions',
+          },
+          {
+            title: 'Operational Optimization',
+            href: '/services/operational-optimization',
+          },
+          {
+            title: 'People & Organizational Performance',
+            href: '/services/people-and-organizational-performance',
+          },
+        ]}
       />
       <ContentPage
         blocks={[

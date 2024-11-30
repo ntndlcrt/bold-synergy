@@ -137,9 +137,7 @@ export default function Breadcrumb({ title, pageTitle, links, isBlack }) {
         <ul ref={listRef}>
           {links.map((link, index) => (
             <li key={index}>
-              <TransitionLink href={TransitionLink.href}>
-                {link.title}
-              </TransitionLink>
+              <TransitionLink href={link.href}>{link.title}</TransitionLink>
             </li>
           ))}
         </ul>

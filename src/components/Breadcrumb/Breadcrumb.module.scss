@@ -60,4 +60,16 @@
       }
     }
   }
+
+  &.--black {
+    .header {
+      background: $black;
+      color: $white;
+    }
+
+    ul {
+      background: $black;
+      color: $white;
+    }
+  }
 }

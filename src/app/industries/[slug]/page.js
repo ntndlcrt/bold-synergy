@@ -13,31 +13,31 @@ export default function Industry() {
       />
       <Breadcrumb
         title="Industries"
-        pageTitle="Consumer Products, Retail & E-Commerce"
+        pageTitle="Business Strategy & Transformation"
         links={[
           {
             title: 'Agribusiness',
-            href: 'agribusiness',
+            href: '/industries/agribusiness',
           },
           {
             title: 'Communications, Media & Technology',
-            href: 'communications-media-and-technology',
+            href: '/industries/communications-media-and-technology',
           },
           {
             title: 'Consumer Products, Retail & E-Commerce',
-            href: 'consumer-products-retail-and-e-commerce',
+            href: '/industries/consumer-products-retail-and-e-commerce',
           },
           {
             title: 'Education',
-            href: 'education',
+            href: '/industries/education',
           },
           {
             title: 'Healthcare',
-            href: 'healthcare',
+            href: '/industries/healthcare',
           },
           {
             title: 'Travel & Tourism',
-            href: 'travel-and-tourism',
+            href: '/industries/travel-and-tourism',
           },
         ]}
       />
