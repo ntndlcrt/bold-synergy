@@ -66,6 +66,7 @@ export default function RootLayout({ children }) {
             />
           </CursorProvider>
         </GSAP>
+        <div id="scroll-progress" />
         <PopupTeam />
         <PopupHelp />
       </body>

@@ -1,0 +1,12 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: vw(4);
+  background: $orange;
+  z-index: 9999;
+  transform-origin: left;
+}
