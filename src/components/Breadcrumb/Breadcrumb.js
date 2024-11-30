@@ -1,11 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import { useRef, useState } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 import SVG from '@/elements/SVG'
+import TransitionLink from '@/utils/TransitionLink'
 
 import styles from './Breadcrumb.module.scss'
 
@@ -137,7 +137,9 @@ export default function Breadcrumb({ title, pageTitle, links, isBlack }) {
         <ul ref={listRef}>
           {links.map((link, index) => (
             <li key={index}>
-              <Link href={link.href}>{link.title}</Link>
+              <TransitionLink href={TransitionLink.href}>
+                {link.title}
+              </TransitionLink>
             </li>
           ))}
         </ul>

@@ -1,0 +1,39 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.transition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  z-index: 3000;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  background: $orange;
+
+  &__icon {
+    position: relative;
+    width: vw(175);
+    height: vw(182);
+
+    svg {
+      position: absolute;
+      width: vw(48);
+      height: vw(49);
+
+      &:first-child {
+        top: 0;
+        left: 0;
+      }
+
+      &:last-child {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

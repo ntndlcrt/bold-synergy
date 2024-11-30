@@ -1,10 +1,10 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 import parse from 'html-react-parser'
 
 import SVG from '@/elements/SVG'
+import TransitionLink from '@/utils/TransitionLink'
 
 import styles from './Footer.module.scss'
 
@@ -20,13 +20,9 @@ export default function Footer({ frames = [], text, links, socials }) {
               frames.map((frame, index) => (
                 <div key={index} className={styles.frame}>
                   <p>{parse(frame.text)}</p>
-                  <Link
-                    className="button"
-                    href={frame.link.href}
-                    target={frame.link.target}
-                  >
+                  <TransitionLink classes="button" href={frame.link.href}>
                     <span>{frame.link.title}</span>
-                  </Link>
+                  </TransitionLink>
                 </div>
               ))}
           </div>
@@ -39,7 +35,7 @@ export default function Footer({ frames = [], text, links, socials }) {
           <ul>
             {links.map((link, index) => (
               <li key={index}>
-                <Link href={link.href}>{link.title}</Link>
+                <TransitionLink href={link.href}>{link.title}</TransitionLink>
               </li>
             ))}
           </ul>

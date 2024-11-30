@@ -3,13 +3,12 @@
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useRef, useState, useEffect } from 'react'
-import Link from 'next/link'
 import parse from 'html-react-parser'
-import ScrollSmoother from 'gsap/ScrollSmoother'
 
 import LinkArrow from '@/elements/LinkArrow'
 import { useStore } from '@/store'
 import SVG from '@/elements/SVG'
+import TransitionLink from '@/utils/TransitionLink'
 
 import styles from './PopupHelp.module.scss'
 
@@ -20,7 +19,6 @@ export default function PopupHelp() {
   const popupRef = useRef(null)
   const overlayRef = useRef(null)
   const innerRef = useRef(null)
-  const smoother = ScrollSmoother.get()
 
   useEffect(() => {
     if (popupHelpData) {
@@ -67,7 +65,7 @@ export default function PopupHelp() {
             {data?.breadcrumb &&
               data.breadcrumb.map((item, i) => (
                 <>
-                  <Link href={item.href}>{item.title}</Link>
+                  <TransitionLink href={item.href}>{item.title}</TransitionLink>
                   <span>/</span>
                 </>
               ))}
@@ -99,7 +97,9 @@ export default function PopupHelp() {
               <ul>
                 {data.links.map((link, i) => (
                   <li key={i}>
-                    <Link href={link.href ? link.href : '#'}>{link.title}</Link>
+                    <TransitionLink href={link.href ? link.href : '#'}>
+                      {link.title}
+                    </TransitionLink>
                   </li>
                 ))}
               </ul>

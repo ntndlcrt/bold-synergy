@@ -4,11 +4,11 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import parse from 'html-react-parser'
 
 import { useStore } from '@/store'
 import SVG from '@/elements/SVG'
+import TransitionLink from '@/utils/TransitionLink'
 
 import styles from './PopupTeam.module.scss'
 
@@ -62,7 +62,7 @@ export default function PopupTeam() {
       <div ref={innerRef} className={styles.inner}>
         <div className={styles.header}>
           <div className={styles.breadcrumb}>
-            <Link href="/about-us/">About us</Link>
+            <TransitionLink href="/about-us/">About us</TransitionLink>
             <span>/</span>
             <span>The team</span>
           </div>

@@ -1,19 +1,20 @@
 import Link from 'next/link'
 
 import SVG from '@/elements/SVG'
+import TransitionLink from '@/utils/TransitionLink'
 
 export default function LinkArrow({ href, title, isCream, isWhite, isBlack }) {
   if (href) {
     return (
-      <Link
+      <TransitionLink
         href={href}
-        className={`link-arrow ${isCream ? '--cream' : ''} ${
+        classes={`link-arrow ${isCream ? '--cream' : ''} ${
           isWhite ? '--white' : ''
         } ${isBlack ? '--black' : ''}`}
       >
         <SVG name="arrow-right" />
         <span>{title}</span>
-      </Link>
+      </TransitionLink>
     )
   } else {
     return (

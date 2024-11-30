@@ -3,8 +3,8 @@ import { create } from 'zustand'
 export const useStore = create((set) => ({
   isTransitionActive: false,
   setIsTransitionActive: (val) => set({ isTransitionActive: val }),
-  isFirstRender: true,
-  setIsFirstRender: (val) => set({ isFirstRender: val }),
+  isFirstLoad: true,
+  setIsFirstLoad: (val) => set({ isFirstLoad: val }),
   scrollerInstance: null,
   setScrollerInstance: (obj) => set({ scrollerInstance: obj }),
   contactFormOpen: false,
