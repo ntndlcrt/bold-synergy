@@ -1,6 +1,6 @@
 import HeroIndustry from '@/blocks/HeroIndustry'
+import Breadcrumb from '@/components/Breadcrumb'
 import ContentPage from '@/blocks/ContentPage'
-import Hero from '@/blocks/Hero'
 
 export default function Industry() {
   return (
@@ -10,6 +10,36 @@ export default function Industry() {
         title="Consumer Products, Retail & E-Commerce"
         text="Thrive in the Age of Disruption"
         src="/images/hero-industry.jpeg"
+      />
+      <Breadcrumb
+        title="Industries"
+        pageTitle="Consumer Products, Retail & E-Commerce"
+        links={[
+          {
+            title: 'Agribusiness',
+            href: 'agribusiness',
+          },
+          {
+            title: 'Communications, Media & Technology',
+            href: 'communications-media-and-technology',
+          },
+          {
+            title: 'Consumer Products, Retail & E-Commerce',
+            href: 'consumer-products-retail-and-e-commerce',
+          },
+          {
+            title: 'Education',
+            href: 'education',
+          },
+          {
+            title: 'Healthcare',
+            href: 'healthcare',
+          },
+          {
+            title: 'Travel & Tourism',
+            href: 'travel-and-tourism',
+          },
+        ]}
       />
       <ContentPage
         blocks={[

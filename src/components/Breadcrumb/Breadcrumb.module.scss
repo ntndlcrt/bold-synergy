@@ -1,0 +1,63 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.breadcrumb {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  .header {
+    padding: vw(20) vw(40);
+    display: flex;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    background: $white;
+
+    svg {
+      width: vw(18);
+      height: vw(19);
+      margin-right: vw(22);
+    }
+
+    & > span {
+      margin-right: vw(12);
+      font-size: vw(18);
+      font-weight: 500;
+
+      &:first-of-type {
+        font-size: vw(14);
+        opacity: 0.5;
+        text-decoration: underline;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(calc(100% - 1px));
+    padding: vw(64) vw(920) vw(120) vw(172);
+    background: $white;
+    gap: vw(24);
+
+    a {
+      font-size: vw(32);
+      transition: 0.3s ease-out;
+      line-height: 1;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

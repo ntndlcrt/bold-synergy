@@ -56,7 +56,7 @@ const ContentPage = ({ blocks }) => {
       gsap.to(asideRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top top',
+          start: 'top top+=50',
           end: 'bottom center-=100',
           scrub: true,
           pin: asideRef.current,
@@ -64,7 +64,6 @@ const ContentPage = ({ blocks }) => {
           pinReparent: true,
           pinType: 'transform',
         },
-        top: 50,
       })
     }, 1500)
   }, [])
