@@ -5,6 +5,7 @@ import fonts from '@/libs/fonts'
 
 import PopupTeam from '@/components/PopupTeam'
 import PopupHelp from '@/components/PopupHelp/PopupHelp'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 import '@/styles/app.scss'
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <PageTransition>
           <GSAP>
             <CursorProvider>
+              <Header />
               {children}
               <Footer
                 text="<p>Experience the Synergy difference: strategic growth, tailored solutions</p><button data-open-contact>Contact us</button>"

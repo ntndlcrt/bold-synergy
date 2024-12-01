@@ -27,4 +27,14 @@
     background-color: $cream;
     color: $orange;
   }
+
+  &.--black {
+    color: $black;
+    border-color: $black;
+
+    &:hover {
+      background-color: $black;
+      color: $cream;
+    }
+  }
 }

@@ -1,0 +1,103 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 300;
+
+  .inner {
+    padding: vw(24) vw(40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: vw(40);
+    position: relative;
+    z-index: 2;
+
+    &.--cream {
+      color: $cream;
+
+      .logo svg {
+        path[data-color-change] {
+          fill: $cream;
+        }
+      }
+    }
+
+    .logo svg {
+      width: vw(258);
+      height: vw(27);
+
+      path[data-color-change] {
+        fill: $black;
+        transition: 0.3s ease-out;
+      }
+    }
+
+    & > ul {
+      flex-direction: row;
+      gap: vw(32);
+
+      li {
+        &,
+        & > * {
+          font-size: vw(18);
+          font-weight: 500;
+          transition: 0.3s ease-out;
+        }
+
+        &.--active {
+          &,
+          & > * {
+            color: $orange;
+          }
+        }
+
+        &:hover {
+          &,
+          & > * {
+            color: $orange;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .submenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    z-index: 1;
+    padding: vw(180) vw(40) vw(140) vw(40);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: $cream;
+
+    span {
+      font-size: vw(20);
+      font-weight: 600;
+    }
+
+    ul {
+      grid-column: 2 / span 2;
+      gap: vw(24);
+
+      a {
+        font-size: vw(32);
+        transition: 0.3s ease-out;
+        line-height: 0.68;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
