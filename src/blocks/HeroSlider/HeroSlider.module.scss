@@ -11,12 +11,12 @@
     flex-wrap: nowrap;
     grid-column: span 12;
     width: 100vw;
-    height: 100vh;
 
     li {
-      height: 100vh;
+      min-height: 100vh;
       min-width: 100vw;
       position: relative;
+      height: fit-content;
 
       :global(.media) {
         @include absoluteFull;
@@ -37,13 +37,13 @@
       }
 
       .content {
-        position: absolute;
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: vw(32);
         z-index: 2;
         color: $cream;
-        inset: vw(240) vw(40) auto vw(40);
+        padding: vw(240) vw(40) vw(280) vw(40);
 
         h2 {
           font-size: vw(20);
