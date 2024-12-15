@@ -5,6 +5,7 @@ import fonts from '@/libs/fonts'
 
 import PopupTeam from '@/components/PopupTeam'
 import PopupHelp from '@/components/PopupHelp/PopupHelp'
+import PopupContact from '@/components/PopupContact'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
         <div id="scroll-progress" />
         <PopupTeam />
         <PopupHelp />
+        <PopupContact />
       </body>
     </html>
   )

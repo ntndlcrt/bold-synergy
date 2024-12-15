@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 
 import TransitionLink from '@/utils/TransitionLink'
 import SVG from '@/elements/SVG'
+import { useStore } from '@/store'
 
 import styles from './Header.module.scss'
 
@@ -17,6 +18,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [isCream, setIsCream] = useState(false)
   const pathname = usePathname()
+  const { setPopupContactOpen } = useStore()
 
   useGSAP(() => {
     if (
@@ -152,12 +154,14 @@ export default function Header() {
           </li>
         </ul>
         <div className={styles.right}>
-          <TransitionLink
-            href="#"
-            classes={`button ${!isCream ? '--black' : ''}`}
+          <button
+            onClick={() => {
+              setPopupContactOpen(true)
+            }}
+            className={`button ${!isCream ? '--black' : ''}`}
           >
             <span>Start your journey</span>
-          </TransitionLink>
+          </button>
         </div>
       </div>
       <div ref={industriesRef} className={styles.submenu}>
