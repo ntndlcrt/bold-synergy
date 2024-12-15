@@ -1,13 +1,14 @@
 'use client'
 
 import gsap from 'gsap'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useGSAP } from '@gsap/react'
 import { usePathname } from 'next/navigation'
 
 import TransitionLink from '@/utils/TransitionLink'
 import SVG from '@/elements/SVG'
 import { useStore } from '@/store'
+import Search from '@/components//Search'
 
 import styles from './Header.module.scss'
 
@@ -18,7 +19,15 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [isCream, setIsCream] = useState(false)
   const pathname = usePathname()
-  const { setPopupContactOpen } = useStore()
+  const { setPopupContactOpen, searchOpen, setSearchOpen } = useStore()
+
+  useEffect(() => {
+    if (pathname.includes('services') || pathname.includes('about-us')) {
+      if (!searchOpen) {
+        setIsCream(true)
+      }
+    }
+  }, [searchOpen])
 
   useGSAP(() => {
     if (
@@ -155,6 +164,16 @@ export default function Header() {
         </ul>
         <div className={styles.right}>
           <button
+            className={styles.search}
+            onClick={() => {
+              setIsCream(false)
+              setSearchOpen(true)
+            }}
+          >
+            <span>Search</span>
+            <SVG name="search" />
+          </button>
+          <button
             onClick={() => {
               setPopupContactOpen(true)
             }}
@@ -239,6 +258,70 @@ export default function Header() {
           </li>
         </ul>
       </div>
+      <Search
+        results={[
+          {
+            href: '/',
+            title: 'Home', // For the logo link
+          },
+          {
+            href: '/industries/industry/',
+            title: 'Agribusiness',
+          },
+          {
+            href: '/industries/industry/',
+            title: 'Communications, Media & Technology',
+          },
+          {
+            href: '/industries/industry/',
+            title: 'Consumer Products, Retail & E-Commerce',
+          },
+          {
+            href: '/industries/industry/',
+            title: 'Education',
+          },
+          {
+            href: '/industries/industry/',
+            title: 'Healthcare',
+          },
+          {
+            href: '/industries/industry/',
+            title: 'Travel & Tourism',
+          },
+          {
+            href: '/services/service/',
+            title: 'Business Strategy & Transformation',
+          },
+          {
+            href: '/services/service/',
+            title: 'Corporate Finance',
+          },
+          {
+            href: '/services/service/',
+            title: 'Digital Transformation',
+          },
+          {
+            href: '/services/service/',
+            title: 'Growth, Marketing & Sales',
+          },
+          {
+            href: '/services/service/',
+            title: 'Mergers and acquisitions',
+          },
+          {
+            href: '/services/service/',
+            title: 'Operational Optimization',
+          },
+          {
+            href: '/services/service/',
+            title: 'People & Organizational Performance',
+          },
+          {
+            href: '/about-us/',
+            title: 'About us',
+          },
+        ]}
+      />
     </div>
   )
 }

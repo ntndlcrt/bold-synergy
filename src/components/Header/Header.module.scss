@@ -26,6 +26,18 @@
           fill: $cream;
         }
       }
+
+      .search svg {
+        * {
+          &[fill] {
+            fill: $cream;
+          }
+
+          &[stroke] {
+            stroke: $cream;
+          }
+        }
+      }
     }
 
     .logo svg {
@@ -96,6 +108,47 @@
 
         &:hover {
           color: $orange;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    gap: vw(32);
+    align-items: center;
+
+    .search {
+      display: flex;
+      gap: vw(10);
+      align-items: center;
+
+      svg {
+        width: vw(18);
+        height: vw(18);
+
+        * {
+          transition: 0.3s ease-out;
+        }
+      }
+
+      span {
+        font-size: vw(18);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      &:hover {
+        svg {
+          * {
+            &[fill] {
+              fill: $orange;
+            }
+
+            &[stroke] {
+              stroke: $orange;
+            }
+          }
         }
       }
     }

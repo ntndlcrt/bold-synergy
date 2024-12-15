@@ -17,4 +17,6 @@ export const useStore = create((set) => ({
   setPopupHelpOpen: (val) => set({ popupHelpOpen: val }),
   popupHelpData: null,
   setPopupHelpData: (obj) => set({ popupHelpData: obj }),
+  searchOpen: false,
+  setSearchOpen: (val) => set({ searchOpen: val }),
 }))

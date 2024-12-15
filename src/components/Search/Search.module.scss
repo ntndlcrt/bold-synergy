@@ -1,0 +1,88 @@
+@use '@mixins' as *;
+@use '@config' as *;
+
+.search {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: $white;
+  padding: vw(140) vw(40) vw(24) vw(40);
+  display: flex;
+  flex-direction: column;
+
+  .input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: vw(40);
+
+    svg {
+      &:first-of-type {
+        height: vw(38);
+        width: vw(38);
+      }
+
+      &:last-of-type {
+        width: vw(20);
+        height: vw(20);
+        cursor: pointer;
+
+        * {
+          transition: 0.3s ease-out;
+
+          &[stroke] {
+            stroke: $black;
+          }
+
+          &[fill] {
+            fill: $black;
+          }
+        }
+
+        &:hover {
+          * {
+            &[stroke] {
+              stroke: $orange;
+            }
+
+            &[fill] {
+              fill: $orange;
+            }
+          }
+        }
+      }
+    }
+
+    input {
+      flex: 1;
+      background: none;
+      padding: none;
+      border: none;
+      outline: none;
+      font-size: vw(48);
+      font-weight: 200;
+
+      &::placeholder {
+        color: $black;
+        opacity: 0.3;
+        font-weight: 200;
+      }
+    }
+  }
+
+  ul {
+    padding-top: vw(80);
+    gap: vw(20);
+
+    a {
+      font-size: vw(50);
+      transition: 0.3s ease-out;
+      line-height: 1;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

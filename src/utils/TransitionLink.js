@@ -12,13 +12,14 @@ export default function TransitionLink({
   classes,
   refProp,
   cursor,
+  onClickEvent,
 }) {
   const router = useRouter()
   const refDefault = useRef(null)
   const {
     isTransitionActive,
     setIsTransitionActive,
-    setContactFormOpen,
+    setPopupContactOpen,
     setPopupTeamOpen,
     setPopupHelpOpen,
   } = useStore()
@@ -31,10 +32,11 @@ export default function TransitionLink({
       onClick={(e) => {
         e.preventDefault()
         if (isTransitionActive) return
-        setContactFormOpen(false)
+        setPopupContactOpen(false)
         setPopupTeamOpen(false)
         setPopupHelpOpen(false)
         setIsTransitionActive(true)
+        onClickEvent && onClickEvent()
         setTimeout(() => {
           router.push(href)
         }, 800)
