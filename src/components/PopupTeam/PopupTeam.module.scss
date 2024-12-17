@@ -11,7 +11,6 @@
   }
 
   .inner {
-    width: vw(1100);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -20,21 +19,38 @@
     z-index: 200;
     display: flex;
     flex-direction: column;
+    width: 100vw;
+
+    @include desktop {
+      width: vw(1100);
+    }
 
     .header {
       background: $gray;
-      padding-left: vw(30);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-left: 20px;
+
+      @include desktop {
+        padding-left: vw(30);
+      }
 
       .breadcrumb {
         display: flex;
-        gap: vw(6);
+        gap: 6px;
+
+        @include desktop {
+          gap: vw(6);
+        }
 
         * {
-          font-size: vw(16);
           color: $black;
+          font-size: 14px;
+
+          @include desktop {
+            font-size: vw(16);
+          }
         }
 
         a {
@@ -48,11 +64,16 @@
       }
 
       button {
-        height: vw(60);
-        width: vw(64);
         background: $orange;
         position: relative;
         transition: 0.3s ease-out;
+        height: 45px;
+        width: 48px;
+
+        @include desktop {
+          height: vw(60);
+          width: vw(64);
+        }
 
         &:hover {
           background: $orange-dark;
@@ -60,25 +81,48 @@
 
         svg {
           @include absolute;
+          width: 14px;
+          height: 14px;
 
-          width: vw(16);
-          height: vw(16);
+          @include desktop {
+            width: vw(16);
+            height: vw(16);
+          }
         }
       }
     }
 
     .content {
-      padding: vw(90) vw(64);
       flex: 1;
       overflow-y: scroll;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: vw(20);
+      gap: 20px;
+      padding: 40px 20px;
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @include desktop {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: vw(20);
+        padding: vw(90) vw(64);
+      }
 
       picture {
-        grid-column: span 3;
-        height: vw(252);
         position: relative;
+        width: 200px;
+        display: block;
+
+        @include mobile {
+          aspect-ratio: 1/1;
+        }
+
+        @include desktop {
+          grid-column: span 3;
+          height: vw(252);
+        }
 
         img {
           @include img;
@@ -86,34 +130,57 @@
       }
 
       .text {
-        grid-column: 5 / span 8;
+        @include desktop {
+          grid-column: 5 / span 8;
+        }
 
         h3 {
-          font-size: vw(36);
           font-weight: 500;
           line-height: 1.1;
-          margin-bottom: vw(10);
+          margin-bottom: 4px;
+          font-size: 32px;
+
+          @include desktop {
+            margin-bottom: vw(10);
+            font-size: vw(36);
+          }
         }
 
         & > span {
-          margin-bottom: vw(50);
-          font-size: vw(20);
           display: block;
+          margin-bottom: 40px;
+          font-size: 18px;
+
+          @include desktop {
+            margin-bottom: vw(50);
+            font-size: vw(20);
+          }
         }
 
         :global(#popup-team-content) {
           display: flex;
           flex-direction: column;
-          gap: vw(50);
+          gap: 20px;
+
+          @include desktop {
+            gap: vw(50);
+          }
 
           p:first-child {
-            font-size: vw(26);
             line-height: 1.3;
+            font-size: 20px;
+
+            @include desktop {
+              font-size: vw(26);
+            }
           }
 
           p:not(:first-child) {
-            font-size: vw(18);
             line-height: 1.6;
+
+            @include desktop {
+              font-size: vw(18);
+            }
           }
         }
       }

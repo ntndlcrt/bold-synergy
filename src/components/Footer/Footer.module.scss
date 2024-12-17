@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 20px 120px 20px;
+    padding: 40px 20px;
 
     @include desktop {
       gap: vw(36);
