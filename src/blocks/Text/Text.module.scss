@@ -2,8 +2,13 @@
 @use '@config' as *;
 
 .text {
-  padding-top: vw(50);
-  padding-bottom: vw(175);
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  @include desktop {
+    padding-top: vw(50);
+    padding-bottom: vw(175);
+  }
 
   & > div {
     padding-top: 0;
@@ -13,7 +18,9 @@
     }
 
     :global(.intro) {
-      grid-column: 4 / span 8;
+      @include desktop {
+        grid-column: 4 / span 8;
+      }
     }
   }
 }
