@@ -2,41 +2,69 @@
 @use '@config' as *;
 
 .list {
-  padding-top: vw(50);
-  padding-bottom: vw(50);
-  grid-template-columns: 1fr;
-  row-gap: vw(100);
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include desktop {
+    padding-top: vw(50);
+    padding-bottom: vw(50);
+    grid-template-columns: 1fr;
+    row-gap: vw(100);
+  }
 
   & > * {
-    grid-column: span 1;
+    @include desktop {
+      grid-column: span 1;
+    }
   }
 
   & > div {
     :global(.intro) {
-      grid-column: 4 / span 8;
+      @include desktop {
+        grid-column: 4 / span 8;
+      }
     }
   }
 
   ul {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: vw(42);
+    gap: 20px;
+
+    @include desktop {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: vw(42);
+      display: grid;
+    }
 
     li {
       display: flex;
       flex-direction: column;
-      padding-top: vw(40);
-      border-top: 5px solid $orange;
+      border-top: 2px solid $orange;
+      padding-top: 10px;
+
+      @include desktop {
+        padding-top: vw(40);
+        border-width: 5px;
+      }
 
       h3 {
-        margin-bottom: vw(24);
-        font-size: vw(18);
         font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        @include desktop {
+          margin-bottom: vw(24);
+          font-size: vw(18);
+        }
       }
 
       p {
-        font-size: vw(16);
         line-height: 1.4;
+        font-size: 14px;
+
+        @include desktop {
+          font-size: vw(16);
+        }
       }
     }
   }
