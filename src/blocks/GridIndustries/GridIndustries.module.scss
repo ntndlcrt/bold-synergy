@@ -2,24 +2,42 @@
 @use '@config' as *;
 
 .gridIndustries {
-  row-gap: vw(64);
-  padding-top: vw(50);
-  padding-bottom: vw(240);
+  row-gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 120px;
+
+  @include desktop {
+    row-gap: vw(64);
+    padding-top: vw(50);
+    padding-bottom: vw(240);
+  }
 
   ul {
-    grid-column: 4 / span 9;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: vw(142);
-    row-gap: vw(38);
+    gap: 40px;
+
+    @include desktop {
+      grid-column: 4 / span 9;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: vw(142);
+      row-gap: vw(38);
+    }
 
     li {
       display: flex;
       flex-direction: column;
-      padding-top: vw(40);
       border-top: 4px solid $orange;
       cursor: pointer;
       height: 100%;
+      padding-top: 10px;
+
+      @include mobile {
+        border-width: 2px;
+      }
+
+      @include desktop {
+        padding-top: vw(40);
+      }
 
       &:hover {
         h3 {
@@ -28,17 +46,27 @@
       }
 
       h3 {
-        margin-bottom: vw(60);
-        font-size: vw(20);
         line-height: 1.1;
         font-weight: 500;
         transition: 0.3s ease-in;
+        margin-bottom: 20px;
+        font-size: 20px;
+
+        @include desktop {
+          margin-bottom: vw(60);
+          font-size: vw(20);
+        }
       }
 
       p {
-        font-size: vw(16);
         line-height: 1.4;
-        margin-bottom: vw(42);
+        font-size: 14px;
+        margin-bottom: 20px;
+
+        @include desktop {
+          margin-bottom: vw(42);
+          font-size: vw(16);
+        }
       }
 
       a {
