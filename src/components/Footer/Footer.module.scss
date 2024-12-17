@@ -17,28 +17,48 @@
     bottom: vw(-312);
     right: vw(-200);
     opacity: 0.15;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   .content {
-    padding: vw(40) vw(40) vw(340) vw(40);
     display: flex;
     flex-direction: column;
-    gap: vw(36);
+    gap: 20px;
+    padding: 20px 20px 120px 20px;
+
+    @include desktop {
+      gap: vw(36);
+      padding: vw(40) vw(40) vw(340) vw(40);
+    }
 
     * {
-      font-size: vw(56);
       line-height: 1;
+      font-size: 32px;
+
+      @include desktop {
+        font-size: vw(56);
+      }
     }
 
     p {
-      width: vw(910);
       color: $cream;
+
+      @include desktop {
+        width: vw(910);
+      }
     }
 
     button {
       color: $orange;
-      padding-bottom: vw(12);
       position: relative;
+      padding-bottom: 12px;
+
+      @include desktop {
+        padding-bottom: vw(12);
+      }
 
       &::after {
         content: '';
@@ -60,21 +80,38 @@
 
   .frames {
     display: flex;
-    flex-wrap: nowrap;
     align-items: stretch;
+    flex-wrap: wrap;
+
+    @include desktop {
+      flex-wrap: nowrap;
+    }
 
     .frame {
-      flex: 1;
-      padding: vw(24) vw(40) vw(48);
       display: flex;
       flex-direction: column;
-      gap: vw(112);
       background: $orange;
       color: $cream;
+      gap: 20px;
+      padding: 40px 20px;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include desktop {
+        flex: 1;
+        gap: vw(112);
+        padding: vw(24) vw(40) vw(48);
+      }
 
       p {
-        font-size: vw(64);
         line-height: 1.1;
+        font-size: 32px;
+
+        @include desktop {
+          font-size: vw(64);
+        }
       }
 
       a {
@@ -88,47 +125,89 @@
   }
 
   .bottom {
-    padding: vw(50) vw(40);
     color: $cream;
     display: flex;
     width: 100%;
+    padding: 80px 20px 20px 20px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include desktop {
+      padding: vw(50) vw(40);
+    }
 
     & > svg {
-      width: vw(152);
-      height: vw(55);
-      margin-right: vw(170);
+      width: calc(152 * 1.2) * 1px;
+      height: calc(55 * 1.2) * 1px;
+
+      @include desktop {
+        width: vw(152);
+        height: vw(55);
+        margin-right: vw(170);
+      }
     }
 
     & > *:not(svg) {
-      margin-top: vw(16);
+      @include desktop {
+        margin-top: vw(16);
+      }
     }
 
     & > span {
-      font-size: vw(14);
       font-weight: 500;
-      margin-right: vw(46);
+      font-size: 14px;
+
+      @include mobile {
+        margin-top: 10px;
+      }
+
+      @include desktop {
+        margin-right: vw(46);
+        font-size: vw(14);
+      }
     }
 
     & > ul {
       flex-direction: row;
-      align-items: center;
-      gap: vw(46);
-      margin-right: vw(260);
-      height: fit-content;
+      gap: 20px;
+
+      @include mobile {
+        margin-top: 40px;
+      }
+
+      @include desktop {
+        align-items: center;
+        gap: vw(46);
+        margin-right: vw(260);
+        height: fit-content;
+      }
 
       li {
         height: fit-content;
       }
 
       a {
-        font-size: vw(14);
         font-weight: 500;
         height: fit-content;
         display: block;
+        font-size: 14px;
+
+        @include desktop {
+          font-size: vw(14);
+        }
 
         &,
         svg * {
           transition: 0.3s ease-in;
+        }
+
+        svg {
+          @include mobile {
+            width: 24px;
+            height: 24px;
+          }
         }
 
         &:hover {
@@ -149,10 +228,18 @@
 
     .group {
       display: flex;
-      gap: vw(24);
-      margin-left: auto;
       height: fit-content;
       align-items: center;
+      gap: 10px;
+
+      @include mobile {
+        margin-top: 80px;
+      }
+
+      @include desktop {
+        gap: vw(24);
+        margin-left: auto;
+      }
 
       * {
         height: fit-content;
@@ -160,13 +247,22 @@
       }
 
       span {
-        font-size: vw(12);
+        font-size: 12px;
+
+        @include desktop {
+          font-size: vw(12);
+        }
       }
 
       a {
         svg {
-          width: vw(93);
-          height: vw(12);
+          width: 93px;
+          height: 12px;
+
+          @include desktop {
+            width: vw(93);
+            height: vw(12);
+          }
 
           path {
             transition: 0.3s ease-in;

@@ -4,12 +4,16 @@
 .button {
   width: fit-content;
   cursor: pointer;
-  padding: vw(20) vw(30);
   border: 1.5px solid $cream;
   color: $cream;
   border-radius: 1000px;
   display: flex;
   align-items: center;
+  padding: 16px 24px;
+
+  @include desktop {
+    padding: vw(20) vw(30);
+  }
 
   &,
   * {
@@ -17,10 +21,16 @@
   }
 
   span {
-    font-size: vw(15);
-    height: vw(12);
-    line-height: vw(12);
     font-weight: 500;
+    font-size: 14px;
+    height: 12px;
+    line-height: 12px;
+
+    @include desktop {
+      font-size: vw(15);
+      height: vw(12);
+      line-height: vw(12);
+    }
   }
 
   &:hover {
