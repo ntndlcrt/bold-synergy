@@ -8,20 +8,33 @@
   .content {
     position: relative;
     z-index: 2;
-    padding: vw(200) 0 vw(134);
     display: flex;
     flex-direction: column;
-    gap: vw(24);
     color: $cream;
-    grid-column: span 10;
+    padding: 120px 0 40px 0;
+    gap: 40px;
+
+    @include desktop {
+      grid-column: span 10;
+      gap: vw(24);
+      padding: vw(200) 0 vw(134);
+    }
 
     h1 {
-      font-size: vw(14);
+      font-size: 14px;
+
+      @include desktop {
+        font-size: vw(14);
+      }
     }
 
     p {
       line-height: 1;
-      font-size: vw(108);
+      font-size: 56px;
+
+      @include desktop {
+        font-size: vw(108);
+      }
     }
   }
 
