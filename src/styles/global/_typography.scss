@@ -2,11 +2,16 @@
 @use '@config' as *;
 
 body {
-  font-size: vw(18);
-  line-height: 1.6;
+  line-height: 1.4;
   font-weight: 400;
+  font-size: 16px;
   color: $black;
   font-family: var(--font-general-sans);
+
+  @include desktop {
+    line-height: 1.6;
+    font-size: vw(18);
+  }
 
   * {
     text-decoration: none;
@@ -34,8 +39,12 @@ ul {
 }
 
 .intro {
-  font-size: vw(38);
   line-height: 1.2;
+  font-size: 24px;
+
+  @include desktop {
+    font-size: vw(38);
+  }
 
   strong {
     font-weight: 400;
@@ -44,9 +53,13 @@ ul {
 }
 
 .statement {
-  font-size: vw(26);
   font-weight: 500;
   line-height: 1.3;
+  font-size: 20px;
+
+  @include desktop {
+    font-size: vw(26);
+  }
 
   strong {
     font-weight: 600;
@@ -55,8 +68,12 @@ ul {
 }
 
 .uptitle {
-  font-size: vw(26);
   line-height: 1.6;
+  font-size: 20px;
+
+  @include desktop {
+    font-size: vw(26);
+  }
 }
 
 p,

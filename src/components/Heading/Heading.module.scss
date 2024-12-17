@@ -2,12 +2,22 @@
 @use '@config' as *;
 
 .heading {
-  @include gridDefault;
-
-  padding-top: vw(20);
   position: relative;
-  width: 100%;
-  grid-column: span 12;
+  padding-top: 20px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @include desktop {
+    @include gridDefault;
+
+    width: 100%;
+    grid-column: span 12;
+    padding-top: vw(20);
+  }
 
   &::before {
     content: '';
@@ -21,20 +31,31 @@
 
   &.--shrunk-text {
     p:nth-child(3) {
-      grid-column: 4 / span 5;
+      @include desktop {
+        grid-column: 4 / span 5;
+      }
     }
   }
 
   h2 {
-    grid-column: span 2;
     display: flex;
     align-items: center;
     height: fit-content;
 
+    @include desktop {
+      grid-column: span 2;
+    }
+
     svg {
-      margin-right: vw(36);
-      width: vw(15);
-      height: vw(16);
+      width: 15px;
+      height: 16px;
+      margin-right: 20px;
+
+      @include desktop {
+        margin-right: vw(36);
+        width: vw(15);
+        height: vw(16);
+      }
     }
 
     span {
@@ -42,15 +63,27 @@
     }
   }
 
+  :global(.intro) {
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
   *:not(h2) {
-    grid-column: 4 / span 9;
+    @include desktop {
+      grid-column: 4 / span 9;
+    }
   }
 
   p:nth-child(3) {
-    margin-top: vw(64);
+    @include desktop {
+      margin-top: vw(64);
+    }
   }
 
   a {
-    margin-top: vw(40);
+    @include desktop {
+      margin-top: vw(40);
+    }
   }
 }

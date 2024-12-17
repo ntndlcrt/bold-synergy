@@ -2,37 +2,68 @@
 @use '@config' as *;
 
 .consulting {
-  padding-top: vw(50);
-  padding-bottom: vw(50);
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include desktop {
+    padding-top: vw(50);
+    padding-bottom: vw(50);
+  }
 
   & > div {
-    padding-bottom: vw(100);
+    padding-bottom: 80px;
+
+    @include desktop {
+      padding-bottom: vw(100);
+    }
   }
 
   & > :global(.intro) {
-    grid-column: 4 / span 5;
-    padding-bottom: vw(56);
+    padding-bottom: 40px;
+
+    @include desktop {
+      grid-column: 4 / span 5;
+      padding-bottom: vw(56);
+    }
   }
 
   ul {
-    grid-column: span 12;
     overflow-x: scroll;
     flex-direction: row;
-    gap: vw(20);
     align-items: stretch;
 
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @include desktop {
+      gap: vw(20);
+      grid-column: span 12;
+    }
+
     li {
-      width: vw(397);
       background: $white;
-      padding: vw(56) vw(32);
       display: flex;
       flex-direction: column;
-      gap: vw(56);
+      padding: 40px 20px;
+      width: calc(50% - 5px);
+      gap: 40px;
+
+      @include desktop {
+        padding: vw(56) vw(32);
+        width: vw(397);
+        gap: vw(56);
+      }
 
       .icon {
-        height: vw(80);
         width: 100%;
         position: relative;
+        height: 60px;
+
+        @include desktop {
+          height: vw(80);
+        }
 
         img {
           width: 100%;
@@ -44,16 +75,24 @@
       }
 
       .title {
-        height: vw(152);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         margin-top: auto;
 
+        @include desktop {
+          height: vw(152);
+        }
+
         h3 {
-          font-size: vw(25);
           font-weight: 500;
-          line-height: 1.3;
+          line-height: 1.2;
+          font-size: 20px;
+
+          @include desktop {
+            font-size: vw(25);
+            line-height: 1.3;
+          }
         }
       }
     }
