@@ -3,16 +3,28 @@
 
 .imageText {
   display: flex;
-  padding-left: vw(80);
   position: relative;
 
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include desktop {
+    padding-left: vw(80);
+  }
+
   p {
-    padding: vw(400) 0 vw(64);
     position: relative;
     z-index: 2;
-    width: vw(920);
-    font-size: vw(30);
     line-height: 1.2;
+    padding: 120px 0 40px;
+
+    @include desktop {
+      padding: vw(400) 0 vw(64);
+      width: vw(920);
+      font-size: vw(30);
+    }
 
     strong {
       font-weight: 600;
@@ -26,8 +38,12 @@
 
   :global(.media) {
     position: absolute;
-    inset: 0 vw(40);
     z-index: 1;
+    inset: 40px 0;
+
+    @include desktop {
+      inset: 0 vw(40);
+    }
 
     &::before {
       @include absoluteFull;
