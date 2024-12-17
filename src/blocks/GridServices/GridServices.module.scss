@@ -2,20 +2,33 @@
 @use '@config' as *;
 
 .gridServices {
-  padding-top: vw(50);
-  padding-bottom: vw(50);
-  row-gap: vw(64);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  row-gap: 40px;
+
+  @include desktop {
+    padding-top: vw(50);
+    padding-bottom: vw(50);
+    row-gap: vw(64);
+  }
 
   ul {
-    grid-column: 4 / span 9;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: vw(20);
+    gap: 10px;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: vw(20);
+      grid-column: 4 / span 9;
+    }
 
     li {
-      min-height: vw(500);
       position: relative;
       cursor: pointer;
+
+      @include desktop {
+        min-height: vw(500);
+      }
 
       :global(.media) {
         @include absoluteFull;
@@ -36,30 +49,48 @@
       .content {
         position: relative;
         z-index: 3;
-        padding: vw(38);
         height: 100%;
         display: flex;
         flex-direction: column;
         color: $white;
+        padding: 20px;
+
+        @include desktop {
+          padding: vw(38);
+        }
 
         h3 {
-          margin-bottom: vw(112);
-          font-size: vw(35);
           font-weight: 500;
           line-height: 1.1;
+          font-size: 32px;
+          margin-bottom: 80px;
+
+          @include desktop {
+            margin-bottom: vw(112);
+            font-size: vw(35);
+          }
         }
 
         p {
           margin-top: auto;
           transition: 0.3s ease-out;
           opacity: 0;
-          transform: translateY(vw(38));
-          font-size: vw(15);
           line-height: 1.3;
+          font-size: 14px;
+          transform: translateY(40px);
+
+          @include desktop {
+            transform: translateY(vw(38));
+            font-size: vw(15);
+          }
         }
 
         a {
-          margin-top: vw(38);
+          margin-top: 40px;
+
+          @include desktop {
+            margin-top: vw(38);
+          }
         }
       }
 
