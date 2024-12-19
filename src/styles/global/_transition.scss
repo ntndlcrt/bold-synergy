@@ -14,7 +14,10 @@
   top: 0;
   left: 0;
   background: $orange;
-  display: none;
+
+  @include mobile {
+    display: none;
+  }
 
   &__icon {
     position: relative;

@@ -215,6 +215,10 @@
       aside {
         height: fit-content;
 
+        @include mobile {
+          padding-bottom: 40px;
+        }
+
         @include desktop {
           grid-column: span 3;
           padding-top: vw(180);
