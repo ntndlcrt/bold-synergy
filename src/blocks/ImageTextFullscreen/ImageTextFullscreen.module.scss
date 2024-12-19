@@ -2,15 +2,22 @@
 @use '@config' as *;
 
 .imageTextFullscreen {
-  height: vw(1100);
   padding: 0;
   display: flex;
   position: relative;
-  margin-top: vw(200);
+
+  @include desktop {
+    margin-top: vw(200);
+    height: vw(1100);
+  }
 
   :global(.media) {
     width: 100%;
-    height: 100%;
+    height: 240px;
+
+    @include desktop {
+      height: 100%;
+    }
 
     &::before {
       content: '';
@@ -26,20 +33,30 @@
   }
 
   .content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: vw(1130);
     background: $orange;
-    padding: vw(90);
     display: flex;
     flex-direction: column;
-    gap: vw(40);
-    z-index: 2;
+    padding: 40px 20px;
+    gap: 40px;
+
+    @include desktop {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: vw(1130);
+      gap: vw(40);
+      padding: vw(90);
+    }
 
     & > svg {
-      width: vw(31);
-      height: vw(32);
+      width: 31px;
+      height: 32px;
+
+      @include desktop {
+        width: vw(31);
+        height: vw(32);
+      }
 
       *[fill] {
         fill: $cream;
@@ -52,9 +69,13 @@
 
     p {
       color: $white;
-      font-size: vw(32);
       font-weight: 300;
       line-height: 1.4;
+      font-size: 20px;
+
+      @include desktop {
+        font-size: vw(32);
+      }
     }
   }
 }
