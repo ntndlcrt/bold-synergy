@@ -3,33 +3,54 @@
 
 .heroService {
   position: relative;
-  min-height: vw(670);
-  padding-top: vw(300);
-  padding-bottom: vw(64);
+  padding-top: 120px;
+  padding-bottom: 40px;
+
+  @include desktop {
+    min-height: vw(670);
+    padding-top: vw(300);
+    padding-bottom: vw(64);
+  }
 
   .content {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: vw(20);
     color: $white;
-    grid-column: span 10;
     justify-content: flex-end;
     height: 100%;
+    gap: 20px;
+
+    @include desktop {
+      gap: vw(20);
+      grid-column: span 10;
+    }
 
     span {
-      font-size: vw(14);
+      font-size: 14px;
+
+      @include desktop {
+        font-size: vw(14);
+      }
     }
 
     h1 {
-      font-size: vw(108);
       line-height: 1;
+      font-size: 56px;
+
+      @include desktop {
+        font-size: vw(108);
+      }
     }
 
     p {
-      font-size: vw(24);
       font-weight: 500;
+      font-size: 20px;
+
+      @include desktop {
+        font-size: vw(24);
+      }
     }
   }
 
