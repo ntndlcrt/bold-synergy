@@ -4,17 +4,26 @@
 .pageIntro {
   display: flex;
   flex-direction: column;
-  gap: vw(50);
+  gap: 40px;
+
+  @include desktop {
+    gap: vw(50);
+  }
 
   &.--big-gap {
     :global(.intro) {
-      margin-bottom: vw(50);
+      @include desktop {
+        margin-bottom: vw(50);
+      }
     }
   }
 
   p:not(:global(.intro)):not(:global(.statement)) {
-    font-size: vw(18);
     line-height: 1.5;
+
+    @include desktop {
+      font-size: vw(18);
+    }
   }
 
   img {

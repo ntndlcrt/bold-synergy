@@ -2,17 +2,29 @@
 @use '@config' as *;
 
 .contentPage {
-  padding-top: vw(80);
-  padding-bottom: vw(120);
-  row-gap: vw(100);
+  padding-top: 80px;
+  padding-bottom: 120px;
+  row-gap: 80px;
+
+  @include desktop {
+    padding-top: vw(80);
+    padding-bottom: vw(120);
+    row-gap: vw(100);
+  }
 
   & > div:not(aside) {
-    grid-column: 5 / span 8;
+    @include desktop {
+      grid-column: 5 / span 8;
+    }
   }
 
   aside {
     grid-column: span 3;
     height: fit-content;
+
+    @include mobile {
+      display: none;
+    }
 
     ul {
       li {
