@@ -8,29 +8,52 @@
   left: 0;
   z-index: 200;
 
+  @include mobile {
+    position: fixed;
+  }
+
   .header {
-    padding: vw(20) vw(40);
     display: flex;
     position: relative;
     z-index: 2;
     align-items: center;
     background: $white;
+    padding: 14px 10px 10px 10px;
+
+    @include desktop {
+      padding: vw(20) vw(40);
+    }
 
     svg {
-      width: vw(18);
-      height: vw(19);
-      margin-right: vw(22);
+      width: 15px;
+      height: 16px;
+      margin-right: 10px;
+
+      @include desktop {
+        width: vw(18);
+        height: vw(19);
+        margin-right: vw(22);
+      }
     }
 
     & > span {
-      margin-right: vw(12);
-      font-size: vw(18);
       font-weight: 500;
+      margin-right: 4px;
+      font-size: 12px;
+
+      @include desktop {
+        margin-right: vw(12);
+        font-size: vw(18);
+      }
 
       &:first-of-type {
-        font-size: vw(14);
         opacity: 0.5;
         text-decoration: underline;
+        font-size: 12px;
+
+        @include desktop {
+          font-size: vw(14);
+        }
 
         &:hover {
           cursor: pointer;
@@ -46,14 +69,23 @@
     bottom: 0;
     left: 0;
     transform: translateY(calc(100% - 1px));
-    padding: vw(64) vw(920) vw(120) vw(172);
     background: $white;
-    gap: vw(24);
+    gap: 20px;
+    padding: 80px 20px;
+
+    @include desktop {
+      gap: vw(24);
+      padding: vw(64) vw(920) vw(120) vw(172);
+    }
 
     a {
-      font-size: vw(32);
       transition: 0.3s ease-out;
       line-height: 0.68;
+      font-size: 20px;
+
+      @include desktop {
+        font-size: vw(32);
+      }
 
       &:hover {
         color: $orange;

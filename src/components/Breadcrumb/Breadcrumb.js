@@ -59,19 +59,21 @@ export default function Breadcrumb({ title, pageTitle, links, isBlack }) {
 
     timeline.current = tl
 
-    gsap.to(containerRef.current, {
-      scrollTrigger: {
-        trigger: '#smooth-content',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-        pin: containerRef.current,
-        pinSpacing: false,
-        pinReparent: true,
-        pinType: 'transform',
-      },
-      top: 0,
-    })
+    if (window.innerWidth > 1024) {
+      gsap.to(containerRef.current, {
+        scrollTrigger: {
+          trigger: '#smooth-content',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+          pin: containerRef.current,
+          pinSpacing: false,
+          pinReparent: true,
+          pinType: 'transform',
+        },
+        top: 0,
+      })
+    }
 
     gsap.to(headerRef.current, {
       yPercent: 0,
