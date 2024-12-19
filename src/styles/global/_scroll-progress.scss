@@ -5,8 +5,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: vw(4);
+  height: 4px;
   background: $orange;
   z-index: 9999;
   transform-origin: left;
+
+  @include desktop {
+    height: vw(4);
+  }
 }
