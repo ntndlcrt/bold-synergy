@@ -15,19 +15,25 @@
   left: 0;
   background: $orange;
 
-  @include mobile {
-    display: none;
-  }
-
   &__icon {
     position: relative;
-    width: vw(175);
-    height: vw(182);
+    width: calc(175 * 0.8) * 1px;
+    height: calc(182 * 0.8) * 1px;
+
+    @include desktop {
+      width: vw(175);
+      height: vw(182);
+    }
 
     svg {
       position: absolute;
-      width: vw(48);
-      height: vw(49);
+      width: 48px;
+      height: 49px;
+
+      @include desktop {
+        width: vw(48);
+        height: vw(49);
+      }
 
       &:first-child {
         top: 0;
