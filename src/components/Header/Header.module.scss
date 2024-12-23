@@ -9,14 +9,18 @@
   z-index: 300;
 
   .inner {
-    padding: vw(24) vw(40);
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: vw(40);
     position: relative;
     z-index: 2;
+    padding: 20px 20px;
+
+    @include desktop {
+      padding: vw(24) vw(40);
+      gap: vw(40);
+    }
 
     &.--cream {
       color: $cream;
@@ -41,8 +45,13 @@
     }
 
     .logo svg {
-      width: vw(258);
-      height: vw(27);
+      width: calc(258 * 0.8) * 1px;
+      height: calc(27 * 0.8) * 1px;
+
+      @include desktop {
+        width: vw(258);
+        height: vw(27);
+      }
 
       path[data-color-change] {
         fill: $black;
@@ -52,14 +61,30 @@
 
     & > ul {
       flex-direction: row;
-      gap: vw(32);
+      gap: 20px;
+
+      @include mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 60px 20px 20px 20px;
+        z-index: -1;
+      }
+
+      @include desktop {
+        gap: vw(32);
+      }
 
       li {
         &,
         & > * {
-          font-size: vw(18);
           font-weight: 500;
           transition: 0.3s ease-out;
+
+          @include desktop {
+            font-size: vw(18);
+          }
         }
 
         &.--active {
@@ -87,24 +112,40 @@
     width: 100%;
     background-color: $black;
     z-index: 1;
-    padding: vw(180) vw(40) vw(140) vw(40);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     color: $cream;
+    padding: 160px 20px 80px 20px;
+
+    @include desktop {
+      padding: vw(180) vw(40) vw(140) vw(40);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     span {
-      font-size: vw(20);
       font-weight: 600;
+      font-size: vw(20);
+
+      @include mobile {
+        display: none;
+      }
     }
 
     ul {
-      grid-column: 2 / span 2;
-      gap: vw(24);
+      gap: 20px;
+
+      @include desktop {
+        grid-column: 2 / span 2;
+        gap: vw(24);
+      }
 
       a {
-        font-size: vw(32);
         transition: 0.3s ease-out;
         line-height: 0.68;
+        font-size: 24px;
+
+        @include desktop {
+          font-size: vw(32);
+        }
 
         &:hover {
           color: $orange;
@@ -117,6 +158,10 @@
     display: flex;
     gap: vw(32);
     align-items: center;
+
+    @include mobile {
+      display: none;
+    }
 
     .search {
       display: flex;
