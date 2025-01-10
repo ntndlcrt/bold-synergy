@@ -45,7 +45,7 @@
         flex-direction: column;
         z-index: 2;
         color: $cream;
-        padding: 120px 20px 0 20px;
+        padding: 160px 20px 0 20px;
         gap: 40px;
 
         @include desktop {
@@ -79,7 +79,7 @@
     flex-direction: row;
     position: absolute;
     z-index: 3;
-    inset: auto 20px 80px 20px;
+    inset: auto 20px 60px 20px;
 
     @include desktop {
       inset: auto vw(52) vw(140) vw(52);

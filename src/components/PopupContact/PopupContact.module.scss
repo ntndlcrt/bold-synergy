@@ -11,7 +11,6 @@
   }
 
   .inner {
-    width: vw(1100);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -20,30 +19,54 @@
     z-index: 200;
     display: flex;
     flex-direction: column;
+    width: 100vw;
+
+    @include mobile {
+      z-index: 1000;
+    }
+
+    @include desktop {
+      width: vw(1100);
+    }
 
     .header {
       background: $gray;
-      padding-left: vw(30);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-left: 20px;
+
+      @include desktop {
+        padding-left: vw(30);
+      }
 
       .breadcrumb {
         display: flex;
-        gap: vw(6);
+
+        @include desktop {
+          gap: vw(6);
+        }
 
         * {
-          font-size: vw(16);
           color: $black;
+
+          @include desktop {
+            font-size: vw(16);
+          }
         }
       }
 
       button {
-        height: vw(60);
-        width: vw(64);
         background: $orange;
         position: relative;
         transition: 0.3s ease-out;
+        height: 45px;
+        width: 48px;
+
+        @include desktop {
+          height: vw(60);
+          width: vw(64);
+        }
 
         &:hover {
           background: $orange-dark;
@@ -52,46 +75,83 @@
         svg {
           @include absolute;
 
-          width: vw(16);
-          height: vw(16);
+          width: 14px;
+          height: 14px;
+
+          @include desktop {
+            width: vw(16);
+            height: vw(16);
+          }
         }
       }
     }
 
     .content {
-      padding: 0 vw(64);
       flex: 1;
       display: flex;
       align-items: stretch;
-      gap: vw(80);
+      padding: 80px 20px;
+      gap: 40px;
+
+      @include mobile {
+        flex-direction: column;
+        overflow-y: auto;
+      }
+
+      @include desktop {
+        gap: vw(80);
+        padding: 0 vw(64);
+      }
 
       .form {
         grid-column: span 8;
         display: flex;
         flex-direction: column;
-        gap: vw(32);
-        max-height: 100%;
-        overflow-y: scroll;
-        padding: vw(48) 0;
-        width: vw(662);
+
+        @include desktop {
+          padding: vw(48) 0;
+          width: vw(662);
+          gap: vw(32);
+          overflow-y: scroll;
+          max-height: 100%;
+        }
 
         h2 {
-          font-size: vw(56);
           font-weight: 300;
           line-height: 1;
+          font-size: 32px;
+
+          @include mobile {
+            margin-bottom: 20px;
+          }
+
+          @include desktop {
+            font-size: vw(56);
+          }
         }
 
         p {
-          font-size: vw(18);
           line-height: 1.6;
+
+          @include mobile {
+            margin-bottom: 40px;
+          }
+
+          @include desktop {
+            font-size: vw(18);
+          }
         }
 
         .fields {
           display: flex;
           flex-direction: column;
-          gap: vw(20);
           transition: 0.3s ease-out;
-          width: calc(100% - vw(22));
+          gap: 20px;
+
+          @include desktop {
+            width: calc(100% - vw(22));
+            gap: vw(20);
+          }
 
           &.--faded {
             opacity: 0.2;
@@ -101,24 +161,36 @@
           .field {
             display: flex;
             flex-direction: column;
-            gap: vw(10);
             position: relative;
+            gap: 5px;
+
+            @include desktop {
+              gap: vw(10);
+            }
 
             label {
-              font-size: vw(13);
               color: $black;
               font-weight: 600;
+              font-size: 14px;
+
+              @include desktop {
+                font-size: vw(13);
+              }
 
               // if required
               &:has(+ *:required) {
                 &::after {
                   content: 'Required';
                   color: $orange;
-                  font-size: vw(13);
                   position: absolute;
                   font-weight: 400;
                   top: 0;
                   right: 0;
+                  font-size: 14px;
+
+                  @include desktop {
+                    font-size: vw(13);
+                  }
                 }
               }
             }
@@ -128,13 +200,18 @@
             textarea {
               background: none;
               outline: none;
-              padding: vw(14) vw(16);
-              border-radius: vw(6);
               border: 1px solid #ccc;
-              font-size: vw(16);
               transition: 0.3s ease-out;
-              font-size: vw(16);
               width: 100%;
+              padding: 10px;
+              font-size: 16px;
+              border-radius: 4px;
+
+              @include desktop {
+                padding: vw(14) vw(16);
+                font-size: vw(16);
+                border-radius: vw(6);
+              }
 
               &::placeholder {
                 color: #ccc;
@@ -157,52 +234,83 @@
             select {
               appearance: none;
               background: url('data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2210%22%20viewBox%3D%220%200%2016%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1%201.5L8%208.5L15%201.5%22%20stroke%3D%22%236E6E73%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E');
-              background-position: right vw(16) top 50%;
               background-repeat: no-repeat;
+              background-position: right 10px top 50%;
+
+              @include desktop {
+                background-position: right vw(16) top 50%;
+              }
             }
 
             textarea {
               resize: vertical;
               font-family: inherit;
               font-weight: inherit;
-              min-height: vw(120);
+              min-height: 240px;
+
+              @include desktop {
+                min-height: vw(120);
+              }
             }
           }
 
           button {
             width: fit-content;
             align-self: flex-end;
-            margin-top: vw(12);
+            margin-top: 20px;
+
+            @include desktop {
+              margin-top: vw(12);
+            }
           }
         }
       }
 
       aside {
-        grid-column: 9 / span 4;
-        padding-top: vw(260);
-        padding-bottom: vw(80);
+        @include desktop {
+          grid-column: 9 / span 4;
+          padding-top: vw(260);
+          padding-bottom: vw(80);
+        }
 
         ul {
-          gap: vw(48);
+          gap: 40px;
+
+          @include desktop {
+            gap: vw(48);
+          }
 
           li {
             display: flex;
             flex-direction: column;
 
             h3 {
-              font-size: vwx(20);
               font-weight: 600;
-              margin-bottom: vw(32);
+              font-size: 24px;
+              margin-bottom: 20px;
+
+              @include desktop {
+                margin-bottom: vw(32);
+                font-size: vw(20);
+              }
             }
 
             *:not(h3) {
-              font-size: vw(16);
               font-weight: 400;
               line-height: 1.3;
+              font-size: 14px;
+
+              @include desktop {
+                font-size: vw(16);
+              }
             }
 
             p:first-of-type {
-              margin-bottom: vw(32);
+              margin-bottom: 20px;
+
+              @include desktop {
+                margin-bottom: vw(32);
+              }
             }
 
             a {

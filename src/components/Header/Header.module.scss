@@ -42,20 +42,35 @@
           }
         }
       }
+
+      .mobile svg {
+        &[fill] {
+          fill: $cream;
+        }
+
+        &[stroke] {
+          stroke: $cream;
+        }
+      }
     }
 
-    .logo svg {
-      width: calc(258 * 0.8) * 1px;
-      height: calc(27 * 0.8) * 1px;
+    .logo {
+      display: flex;
+      align-items: center;
 
-      @include desktop {
-        width: vw(258);
-        height: vw(27);
-      }
+      svg {
+        width: calc(258 * 0.86) * 1px;
+        height: calc(27 * 0.86) * 1px;
 
-      path[data-color-change] {
-        fill: $black;
-        transition: 0.3s ease-out;
+        @include desktop {
+          width: vw(258);
+          height: vw(27);
+        }
+
+        path[data-color-change] {
+          fill: $black;
+          transition: 0.3s ease-out;
+        }
       }
     }
 
@@ -156,11 +171,52 @@
 
   .right {
     display: flex;
-    gap: vw(32);
     align-items: center;
+    gap: 20px;
 
-    @include mobile {
-      display: none;
+    @include desktop {
+      gap: vw(32);
+    }
+
+    button:not(.mobile):not(.search) {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    button.mobile {
+      svg {
+        width: 24px;
+        height: 24px;
+
+        * {
+          &[fill] {
+            fill: $black;
+          }
+
+          &[stroke] {
+            stroke: $black;
+          }
+        }
+      }
+
+      @include desktop {
+        display: none;
+      }
+
+      &:hover {
+        svg {
+          * {
+            &[fill] {
+              fill: $orange;
+            }
+
+            &[stroke] {
+              stroke: $orange;
+            }
+          }
+        }
+      }
     }
 
     .search {
@@ -169,8 +225,13 @@
       align-items: center;
 
       svg {
-        width: vw(18);
-        height: vw(18);
+        width: 24px;
+        height: 24px;
+
+        @include desktop {
+          width: vw(18);
+          height: vw(18);
+        }
 
         * {
           transition: 0.3s ease-out;
@@ -181,6 +242,10 @@
         font-size: vw(18);
         font-weight: 500;
         line-height: 1;
+
+        @include mobile {
+          display: none;
+        }
       }
 
       &:hover {

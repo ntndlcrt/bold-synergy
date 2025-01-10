@@ -181,6 +181,14 @@ export default function Header() {
           >
             <span>Start your journey</span>
           </button>
+          <button
+            onClick={() => {
+              setPopupContactOpen(true)
+            }}
+            className={styles.mobile}
+          >
+            <SVG name="contact" />
+          </button>
         </div>
       </div>
       <div ref={industriesRef} className={styles.submenu}>
